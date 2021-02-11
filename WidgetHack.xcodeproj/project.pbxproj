@@ -11,15 +11,16 @@
 		839A961425D49111004DD12D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A961325D49111004DD12D /* ContentView.swift */; };
 		839A961625D49113004DD12D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839A961525D49113004DD12D /* Assets.xcassets */; };
 		839A961925D49113004DD12D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839A961825D49113004DD12D /* Preview Assets.xcassets */; };
-		839A962325D49165004DD12D /* WidgetContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A962125D49164004DD12D /* WidgetContent.swift */; };
+		839A962325D49165004DD12D /* WidgetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A962125D49164004DD12D /* WidgetDataModel.swift */; };
 		839A962425D49165004DD12D /* WidgetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A962225D49165004DD12D /* WidgetsApp.swift */; };
 		839A962D25D4946F004DD12D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839A962C25D4946F004DD12D /* WidgetKit.framework */; };
 		839A962F25D4946F004DD12D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839A962E25D4946F004DD12D /* SwiftUI.framework */; };
 		839A963225D4946F004DD12D /* OpenItemWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A963125D4946F004DD12D /* OpenItemWidget.swift */; };
 		839A963425D49470004DD12D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839A963325D49470004DD12D /* Assets.xcassets */; };
 		839A963825D49470004DD12D /* OpenItemWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 839A962A25D4946F004DD12D /* OpenItemWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		839A964025D4951F004DD12D /* WidgetContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A963F25D4951F004DD12D /* WidgetContent.swift */; };
 		839A964425D49714004DD12D /* WidgetContentReaderWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A964325D49714004DD12D /* WidgetContentReaderWriter.swift */; };
+		C94A9F7625D5054F00D6C4FB /* WidgetContentReaderWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A9F7525D5054F00D6C4FB /* WidgetContentReaderWriter.swift */; };
+		C97EED7B25D503AB009AE98E /* WidgetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97EED7A25D503AB009AE98E /* WidgetDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +54,7 @@
 		839A961525D49113004DD12D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		839A961825D49113004DD12D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		839A961A25D49113004DD12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		839A962125D49164004DD12D /* WidgetContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetContent.swift; sourceTree = "<group>"; };
+		839A962125D49164004DD12D /* WidgetDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetDataModel.swift; sourceTree = "<group>"; };
 		839A962225D49165004DD12D /* WidgetsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetsApp.swift; sourceTree = "<group>"; };
 		839A962A25D4946F004DD12D /* OpenItemWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OpenItemWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		839A962C25D4946F004DD12D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -61,8 +62,11 @@
 		839A963125D4946F004DD12D /* OpenItemWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenItemWidget.swift; sourceTree = "<group>"; };
 		839A963325D49470004DD12D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		839A963525D49470004DD12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		839A963F25D4951F004DD12D /* WidgetContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WidgetContent.swift; path = WidgetHack/WidgetContent.swift; sourceTree = SOURCE_ROOT; };
 		839A964325D49714004DD12D /* WidgetContentReaderWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentReaderWriter.swift; sourceTree = "<group>"; };
+		C94A9F7525D5054F00D6C4FB /* WidgetContentReaderWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentReaderWriter.swift; sourceTree = "<group>"; };
+		C97EED6625D4FF9C009AE98E /* WidgetHack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetHack.entitlements; sourceTree = "<group>"; };
+		C97EED6F25D502C4009AE98E /* OpenItemWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenItemWidgetExtension.entitlements; sourceTree = "<group>"; };
+		C97EED7A25D503AB009AE98E /* WidgetDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +111,8 @@
 		839A961025D49111004DD12D /* WidgetHack */ = {
 			isa = PBXGroup;
 			children = (
-				839A962125D49164004DD12D /* WidgetContent.swift */,
+				C97EED6625D4FF9C009AE98E /* WidgetHack.entitlements */,
+				C94A9F7925D5055C00D6C4FB /* SharedCode */,
 				839A962225D49165004DD12D /* WidgetsApp.swift */,
 				839A961125D49111004DD12D /* WidgetHackApp.swift */,
 				839A961325D49111004DD12D /* ContentView.swift */,
@@ -138,13 +143,31 @@
 		839A963025D4946F004DD12D /* OpenItemWidget */ = {
 			isa = PBXGroup;
 			children = (
-				839A963F25D4951F004DD12D /* WidgetContent.swift */,
+				C97EED6F25D502C4009AE98E /* OpenItemWidgetExtension.entitlements */,
+				C94A9F7A25D5056B00D6C4FB /* SharedCode */,
 				839A963125D4946F004DD12D /* OpenItemWidget.swift */,
 				839A963325D49470004DD12D /* Assets.xcassets */,
 				839A963525D49470004DD12D /* Info.plist */,
-				839A964325D49714004DD12D /* WidgetContentReaderWriter.swift */,
 			);
 			path = OpenItemWidget;
+			sourceTree = "<group>";
+		};
+		C94A9F7925D5055C00D6C4FB /* SharedCode */ = {
+			isa = PBXGroup;
+			children = (
+				839A962125D49164004DD12D /* WidgetDataModel.swift */,
+				C94A9F7525D5054F00D6C4FB /* WidgetContentReaderWriter.swift */,
+			);
+			path = SharedCode;
+			sourceTree = "<group>";
+		};
+		C94A9F7A25D5056B00D6C4FB /* SharedCode */ = {
+			isa = PBXGroup;
+			children = (
+				C97EED7A25D503AB009AE98E /* WidgetDataModel.swift */,
+				839A964325D49714004DD12D /* WidgetContentReaderWriter.swift */,
+			);
+			path = SharedCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,10 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				839A962325D49165004DD12D /* WidgetContent.swift in Sources */,
+				839A962325D49165004DD12D /* WidgetDataModel.swift in Sources */,
 				839A961425D49111004DD12D /* ContentView.swift in Sources */,
 				839A961225D49111004DD12D /* WidgetHackApp.swift in Sources */,
 				839A962425D49165004DD12D /* WidgetsApp.swift in Sources */,
+				C94A9F7625D5054F00D6C4FB /* WidgetContentReaderWriter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +282,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97EED7B25D503AB009AE98E /* WidgetDataModel.swift in Sources */,
 				839A964425D49714004DD12D /* WidgetContentReaderWriter.swift in Sources */,
 				839A963225D4946F004DD12D /* OpenItemWidget.swift in Sources */,
-				839A964025D4951F004DD12D /* WidgetContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +421,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WidgetHack/WidgetHack.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetHack/Preview Content\"";
 				DEVELOPMENT_TEAM = Q69JMRS3FN;
@@ -409,6 +435,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.drei.WidgetHack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,9 +447,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WidgetHack/WidgetHack.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetHack/Preview Content\"";
-				DEVELOPMENT_TEAM = Q69JMRS3FN;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WidgetHack/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -432,6 +461,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.drei.WidgetHack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -442,6 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = OpenItemWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q69JMRS3FN;
 				INFOPLIST_FILE = OpenItemWidget/Info.plist;
@@ -463,6 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = OpenItemWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q69JMRS3FN;
 				INFOPLIST_FILE = OpenItemWidget/Info.plist;

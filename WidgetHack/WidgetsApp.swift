@@ -1,11 +1,11 @@
 import Foundation
 import WidgetKit
 
-@available(iOS 14.0, *)
 class WidgetCoordinator {
     static let shared = WidgetCoordinator()
-    private let store: WidgetsStore!
-    private var observer: WidgetContentNotificationObserver!
+    private let store: WidgetsStore
+    private let observer: WidgetContentNotificationObserver
+
     private init() {
         self.store = WidgetsStore()
         self.observer = WidgetContentNotificationObserver(store: store)
@@ -27,18 +27,16 @@ struct WidgetsStore {
 
     func reload(kind: WidgetKind2, content: WidgetContent) {
         //contentByKind[kind] = content
+        // TODO: write to telemetry?, whenever the content changes
         // TODO: write to shared container
-
         WidgetCenter.shared.reloadTimelines(ofKind: kind.rawValue)
     }
 }
 
-@available(iOS 14.0, *)
 extension Notification.Name {
     public static let widgetContent = Notification.Name(rawValue: "Widget.content")
 }
 
-@available(iOS 14.0, *)
 final class WidgetContentNotificationObserver {
     private let store: WidgetsStore
 
@@ -48,10 +46,11 @@ final class WidgetContentNotificationObserver {
     }
 
     private func configureObservations() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(handleNotification(notification:)),
-                                               name: NSNotification.Name.widgetContent,
-                                               object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleNotification(notification:)),
+            name: NSNotification.Name.widgetContent,
+            object: nil)
     }
 
     @objc func handleNotification(notification: Notification) {
