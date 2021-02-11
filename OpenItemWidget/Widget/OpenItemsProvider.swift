@@ -12,7 +12,8 @@ struct OpenItemsProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [WidgetEntry] = []
+        let entry = WidgetEntry(date: Date(), content: WidgetContent(title: "", subtitle: "", imageName: "", primaryContent: "", secondaryContent: "", count: "", updatedAt: ""))
+        var entries: [WidgetEntry] = [entry]
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }

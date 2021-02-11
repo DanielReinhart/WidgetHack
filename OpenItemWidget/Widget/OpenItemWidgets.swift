@@ -5,15 +5,15 @@ import SwiftUI
 struct OpenItemWidget: Widget {
     let kind = WidgetKind.openItems.rawValue
 
-    private var provider: OpenItemsProvider {
-        OpenItemsProvider()
+    private var provider: OpenItemsIntentProvider {
+        OpenItemsIntentProvider()
     }
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(
-            kind: kind,
-            provider: provider,
-            content: { WidgetContentView(content: $0.content) })
+        IntentConfiguration(kind: kind,
+                            intent: OpenItemsIntent.self,
+                            provider: provider,
+                            content: { WidgetContentView(content: $0.content) })
             .supportedFamilies([.systemSmall, .systemMedium])
             .configurationDisplayName("My Widget")
             .description("This is an example widget.")

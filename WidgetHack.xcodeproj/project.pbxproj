@@ -20,6 +20,9 @@
 		839A963825D49470004DD12D /* OpenItemWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 839A962A25D4946F004DD12D /* OpenItemWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		839A964425D49714004DD12D /* WidgetContentReaderWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A964325D49714004DD12D /* WidgetContentReaderWriter.swift */; };
 		839A965025D59BA5004DD12D /* WidgetContentNotificationPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A964F25D59BA5004DD12D /* WidgetContentNotificationPoster.swift */; };
+		839A965625D5A6A4004DD12D /* OpenItemWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 839A965525D5A69F004DD12D /* OpenItemWidget.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
+		839A965F25D5A737004DD12D /* OpenItemsIntentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A965E25D5A737004DD12D /* OpenItemsIntentProvider.swift */; };
+		839A966625D5AAFA004DD12D /* OpenItemWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 839A965525D5A69F004DD12D /* OpenItemWidget.intentdefinition */; };
 		C94A9F7625D5054F00D6C4FB /* WidgetContentReaderWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A9F7525D5054F00D6C4FB /* WidgetContentReaderWriter.swift */; };
 		C97EED7B25D503AB009AE98E /* WidgetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97EED7A25D503AB009AE98E /* WidgetDataModel.swift */; };
 		C987A02C25D587550029BB09 /* OpenItemsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987A02B25D587550029BB09 /* OpenItemsProvider.swift */; };
@@ -69,6 +72,8 @@
 		839A963525D49470004DD12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		839A964325D49714004DD12D /* WidgetContentReaderWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentReaderWriter.swift; sourceTree = "<group>"; };
 		839A964F25D59BA5004DD12D /* WidgetContentNotificationPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentNotificationPoster.swift; sourceTree = "<group>"; };
+		839A965525D5A69F004DD12D /* OpenItemWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = OpenItemWidget.intentdefinition; sourceTree = "<group>"; };
+		839A965E25D5A737004DD12D /* OpenItemsIntentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenItemsIntentProvider.swift; sourceTree = "<group>"; };
 		C94A9F7525D5054F00D6C4FB /* WidgetContentReaderWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentReaderWriter.swift; sourceTree = "<group>"; };
 		C97EED6625D4FF9C009AE98E /* WidgetHack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetHack.entitlements; sourceTree = "<group>"; };
 		C97EED6F25D502C4009AE98E /* OpenItemWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenItemWidgetExtension.entitlements; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 				C94A9F7A25D5056B00D6C4FB /* SharedCode */,
 				C97EED6F25D502C4009AE98E /* OpenItemWidgetExtension.entitlements */,
 				839A963525D49470004DD12D /* Info.plist */,
+				839A965525D5A69F004DD12D /* OpenItemWidget.intentdefinition */,
 			);
 			path = OpenItemWidget;
 			sourceTree = "<group>";
@@ -187,6 +193,7 @@
 				C987A03725D5887A0029BB09 /* WidgetEntry.swift */,
 				839A963125D4946F004DD12D /* OpenItemWidgets.swift */,
 				C987A02B25D587550029BB09 /* OpenItemsProvider.swift */,
+				839A965E25D5A737004DD12D /* OpenItemsIntentProvider.swift */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -307,6 +314,7 @@
 				839A965025D59BA5004DD12D /* WidgetContentNotificationPoster.swift in Sources */,
 				839A962425D49165004DD12D /* WidgetsApp.swift in Sources */,
 				C94A9F7625D5054F00D6C4FB /* WidgetContentReaderWriter.swift in Sources */,
+				839A966625D5AAFA004DD12D /* OpenItemWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,8 +325,10 @@
 				C97EED7B25D503AB009AE98E /* WidgetDataModel.swift in Sources */,
 				839A964425D49714004DD12D /* WidgetContentReaderWriter.swift in Sources */,
 				839A963225D4946F004DD12D /* OpenItemWidgets.swift in Sources */,
+				839A965F25D5A737004DD12D /* OpenItemsIntentProvider.swift in Sources */,
 				C987A02C25D587550029BB09 /* OpenItemsProvider.swift in Sources */,
 				C987A04425D58E7B0029BB09 /* WidgetContentView.swift in Sources */,
+				839A965625D5A6A4004DD12D /* OpenItemWidget.intentdefinition in Sources */,
 				C9F345F925D586CA0020A9B0 /* Mocks.swift in Sources */,
 				C987A03825D5887A0029BB09 /* WidgetEntry.swift in Sources */,
 			);
