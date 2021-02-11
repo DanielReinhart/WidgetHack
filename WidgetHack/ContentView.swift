@@ -17,11 +17,14 @@ struct ContentView: View {
     }
 
     func postNotification() {
-        let content = WidgetContent(title: "My Project",
-                                    subtitle: "Punch",
-                                    imageName: "Punch",
-                                    value: "5 Open Items")
-        
+        let content = WidgetContent(
+            title: "My Project",
+            subtitle: "Punch",
+            imageName: "Punchlist",
+            primaryContent: "5 open items",
+            secondaryContent: nil,
+            count: "5",
+            updatedAt: "now")
         WidgetContentNotificationPoster.post(with: content,
                                              tool: "punch",
                                              kind: .openItems)

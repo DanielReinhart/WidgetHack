@@ -18,6 +18,15 @@ struct WidgetContentView: View {
             }
         }
 
+        var imagePadding: CGFloat {
+            switch size {
+            case .systemSmall:
+                return 2
+            default:
+                return 4
+            }
+        }
+
         var body: some View {
             ZStack {
                 Circle().fill(Color.black)
@@ -26,7 +35,7 @@ struct WidgetContentView: View {
                     .resizable()
                     .scaledToFit()
                     .foregroundColor(Color.white)
-                    .padding(4)
+                    .padding(imagePadding)
             }.frame(width: imageSize, height: imageSize)
         }
     }
