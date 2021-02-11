@@ -12,20 +12,14 @@ class WidgetCoordinator {
     }
 }
 
-@available(iOS 14.0, *)
-//2 is needed - complains about invalid redeclaration otherwise
-enum WidgetKind2: String {
-    case openItems
-}
-
 //"Open Items" : { "Punch": WidgetContent, "Correspondence": WidgetContent }
 
 @available(iOS 14.0, *)
 struct WidgetsStore {
-    private var registeredWidgetKinds: [WidgetKind2] = []
-    private var contentByKind: [WidgetKind2: [String: WidgetContent]] = [:]
+    private var registeredWidgetKinds: [WidgetKind] = []
+    private var contentByKind: [WidgetKind: [String: WidgetContent]] = [:]
 
-    func reload(kind: WidgetKind2, content: WidgetContent) {
+    func reload(kind: WidgetKind, content: WidgetContent) {
         //contentByKind[kind] = content
         // TODO: write to telemetry?, whenever the content changes
         // TODO: write to shared container
@@ -54,7 +48,19 @@ final class WidgetContentNotificationObserver {
     }
 
     @objc func handleNotification(notification: Notification) {
+        guard let data = notification.userInfo?[WidgetContentNotificationData.userInfoKey] as? WidgetContentNotificationData else {
+            return
+        }
 
+        do {
+            try WidgetContentReaderWriter().writeSnapshot(kind: data.kind,
+                                                          tool: data.tool,
+                                                          widgetContent: data.content)
+            WidgetCenter.shared.reloadTimelines(ofKind: data.kind.rawValue)
+        } catch {
+            //Assertion???
+            print("error")
+        }
     }
 }
 
