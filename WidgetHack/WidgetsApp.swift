@@ -13,7 +13,8 @@ class WidgetCoordinator {
 }
 
 @available(iOS 14.0, *)
-fileprivate enum WidgetKind: String {
+//2 is needed - complains about invalid redeclaration otherwise
+enum WidgetKind2: String {
     case openItems
 }
 
@@ -21,10 +22,10 @@ fileprivate enum WidgetKind: String {
 
 @available(iOS 14.0, *)
 struct WidgetsStore {
-    private var registeredWidgetKinds: [WidgetKind] = []
-    private var contentByKind: [WidgetKind: [String: WidgetContent]] = [:]
+    private var registeredWidgetKinds: [WidgetKind2] = []
+    private var contentByKind: [WidgetKind2: [String: WidgetContent]] = [:]
 
-    func reload(kind: WidgetKind, content: WidgetContent) {
+    func reload(kind: WidgetKind2, content: WidgetContent) {
         //contentByKind[kind] = content
         // TODO: write to shared container
 

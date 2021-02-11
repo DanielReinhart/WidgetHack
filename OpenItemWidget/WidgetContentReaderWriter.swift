@@ -20,8 +20,8 @@ final class WidgetContentReaderWriter {
     }
 
     func readContent(kind: WidgetKind, toolName: String) -> WidgetContent? {
-        guard let snapshot = readSnapshot()
-        else { return nil }
+//        guard let snapshot = readSnapshot()
+//        else { return nil }
         return nil
     }
 
