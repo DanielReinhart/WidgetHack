@@ -16,7 +16,19 @@ struct OpenItemWidget: Widget {
             provider: provider,
             content: { WidgetContentView(content: $0.content) })
             .supportedFamilies([.systemSmall, .systemMedium])
-            .configurationDisplayName("Open Items")
-            .description("This is an example widget.")
+            .configurationDisplayName(Self.widgetKind.displayName)
+
+    }
+}
+
+
+extension WidgetKind {
+    var displayName: String {
+        switch self {
+        case .openItems:
+            return NSLocalizedString(
+                "My Open Items",
+                comment: "My Open Items widget display name")
+        }
     }
 }

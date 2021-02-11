@@ -70,6 +70,7 @@
 		839A964325D49714004DD12D /* WidgetContentReaderWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentReaderWriter.swift; sourceTree = "<group>"; };
 		839A964F25D59BA5004DD12D /* WidgetContentNotificationPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentNotificationPoster.swift; sourceTree = "<group>"; };
 		C94A9F7525D5054F00D6C4FB /* WidgetContentReaderWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentReaderWriter.swift; sourceTree = "<group>"; };
+		C950BD9925D5AD5E00B11E3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		C97EED6625D4FF9C009AE98E /* WidgetHack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetHack.entitlements; sourceTree = "<group>"; };
 		C97EED6F25D502C4009AE98E /* OpenItemWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenItemWidgetExtension.entitlements; sourceTree = "<group>"; };
 		C97EED7A25D503AB009AE98E /* WidgetDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetDataModel.swift; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		839A960525D49111004DD12D = {
 			isa = PBXGroup;
 			children = (
+				C97EED6F25D502C4009AE98E /* OpenItemWidgetExtension.entitlements */,
 				839A961025D49111004DD12D /* WidgetHack */,
 				839A963025D4946F004DD12D /* OpenItemWidget */,
 				839A962B25D4946F004DD12D /* Frameworks */,
@@ -157,8 +159,8 @@
 				C987A02A25D587370029BB09 /* Widget */,
 				C9F345EC25D5865C0020A9B0 /* View */,
 				C94A9F7A25D5056B00D6C4FB /* SharedCode */,
-				C97EED6F25D502C4009AE98E /* OpenItemWidgetExtension.entitlements */,
 				839A963525D49470004DD12D /* Info.plist */,
+				C950BD9A25D5AD5E00B11E3C /* Localized.strings */,
 			);
 			path = OpenItemWidget;
 			sourceTree = "<group>";
@@ -333,6 +335,17 @@
 			targetProxy = 839A963625D49470004DD12D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C950BD9A25D5AD5E00B11E3C /* Localized.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C950BD9925D5AD5E00B11E3C /* en */,
+			);
+			name = Localized.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		839A961B25D49113004DD12D /* Debug */ = {
@@ -509,8 +522,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = OpenItemWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q69JMRS3FN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OpenItemWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,6 +533,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.drei.WidgetHack.OpenItemWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,8 +546,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = OpenItemWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q69JMRS3FN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OpenItemWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -541,6 +557,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.drei.WidgetHack.OpenItemWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

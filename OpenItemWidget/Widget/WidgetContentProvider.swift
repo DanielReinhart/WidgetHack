@@ -6,7 +6,7 @@ struct WidgetContentProvider: TimelineProvider {
     let kind: WidgetKind
 
     func placeholder(in context: Context) -> WidgetEntry {
-        WidgetEntry.mock
+        WidgetEntry.placeholder
     }
 
     func getSnapshot(in context: Context, completion: @escaping (WidgetEntry) -> ()) {
