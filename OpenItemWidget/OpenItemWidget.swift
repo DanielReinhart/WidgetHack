@@ -9,19 +9,16 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+    func placeholder(in context: Context) -> WidgetContentEntry {
+        WidgetContentEntry.mock
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
-        completion(entry)
+    func getSnapshot(in context: Context, completion: @escaping (WidgetContentEntry) -> ()) {
+        completion(WidgetContentEntry.mock)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-
+        var entries: [WidgetContentEntry] = []
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -57,7 +54,20 @@ struct OpenItemWidget: Widget {
 
 struct OpenItemWidget_Previews: PreviewProvider {
     static var previews: some View {
-        OpenItemWidgetEntryView(entry: SimpleEntry(date: Date()))
+        OpenItemWidgetEntryView(entry: .mock)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
+    }
+}
+
+
+extension WidgetContentEntry {
+    static var mock: Self {
+        Self(date: Date(), content: .mock)
+    }
+}
+
+extension WidgetContent {
+    static var mock: Self {
+        Self(title: "Title", subtitle: "subtitle", imageName: "xxx", value: "9 items open")
     }
 }

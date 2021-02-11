@@ -1,9 +1,16 @@
 import SwiftUI
 
+// COPY: WidgetHack.WidgetDataModel.swift
+
 enum WidgetKind: String {
     case openItems
 }
 
+enum WidgetsAppGroup: String {
+    case name = "group.com.useyourloaf.widgets"
+}
+
+//"Open Items" : { "Punch": WidgetContent, "Correspondence": WidgetContent }
 struct WidgetStoreSnapshot {
     let data: [WidgetKind: [WidgetToolSnapshot]]
     let lastUpdated: Date
@@ -35,5 +42,3 @@ struct WidgetContent: Codable {
     let imageName: String
     let value: String
 }
-
-// convenience methods for read/write via JSONDecoder

@@ -1,15 +1,16 @@
 import Foundation
 
+// COPY: WidgetHack.WidgetContentReaderWriter.swift
 final class WidgetContentReaderWriter {
     static let snapshotKey = "widget-snasphot"
 
     // TODO: use app group defaults
-    var sharedContainer: UserDefaults {
-        UserDefaults.standard
+    var sharedContainer: UserDefaults? {
+        UserDefaults(suiteName: WidgetsAppGroup.name.rawValue)
     }
 
     func readSnapshotData() -> Data? {
-        sharedContainer.data(forKey: Self.snapshotKey)
+        sharedContainer?.data(forKey: Self.snapshotKey)
     }
 
     func readSnapshot() -> WidgetStoreSnapshot? {
