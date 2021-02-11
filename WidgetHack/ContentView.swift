@@ -26,7 +26,7 @@ struct ContentView: View {
             count: "5",
             updatedAt: "now")
         WidgetContentNotificationPoster.post(with: content,
-                                             tool: "punch",
+                                             tool: .punch,
                                              kind: .openItems)
     }
 }

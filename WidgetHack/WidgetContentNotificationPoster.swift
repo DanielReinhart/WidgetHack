@@ -9,7 +9,7 @@ import Foundation
 
 //Clients should use this to post notifications to update widget data
 final class WidgetContentNotificationPoster {
-    static func post(with content: WidgetContent, tool: String, kind: WidgetKind) {
+    static func post(with content: WidgetContent, tool: WidgetTool, kind: WidgetKind) {
         let userInfo = WidgetContentNotificationData.constructUserInfo(kind: kind,
                                                                        tool: tool,
                                                                        content: content)
@@ -24,10 +24,10 @@ struct WidgetContentNotificationData {
     static let userInfoKey = "data"
 
     let kind: WidgetKind
-    let tool: String
+    let tool: WidgetTool
     let content: WidgetContent
 
-    fileprivate static func constructUserInfo(kind: WidgetKind, tool: String, content: WidgetContent) -> [String: Any] {
+    fileprivate static func constructUserInfo(kind: WidgetKind, tool: WidgetTool, content: WidgetContent) -> [String: Any] {
         return [ userInfoKey : WidgetContentNotificationData(kind: kind, tool: tool, content: content) ]
     }
 }

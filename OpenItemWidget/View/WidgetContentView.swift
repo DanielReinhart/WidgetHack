@@ -18,25 +18,14 @@ struct WidgetContentView: View {
             }
         }
 
-        var imagePadding: CGFloat {
-            switch size {
-            case .systemSmall:
-                return 5
-            default:
-                return 6
-            }
-        }
-
         var body: some View {
-            ZStack {
-                Circle().fill(Color.black)
-                Image("ToolList/\(imageName)")
-                    .renderingMode(.template)
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(Color.white)
-                    .padding(imagePadding)
-            }.frame(width: imageSize, height: imageSize)
+            Image("ToolList/\(imageName)")
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(Color.primary)
+                .frame(width: imageSize, height: imageSize)
+                .unredacted()
         }
     }
 
@@ -45,20 +34,23 @@ struct WidgetContentView: View {
 
         var body: some View {
             VStack(alignment: .leading) {
-                HStack(spacing: 4) {
-                    ToolListImage(imageName: content.imageName)
-                    VStack(alignment: .leading) {
-                        Text(verbatim: content.title)
-                            .font(.headline)
-                        Text(verbatim: content.subtitle)
-                            .font(.subheadline)
+                HStack {
+                    if let name = content.imageName {
+                        ToolListImage(imageName: name).unredacted()
                     }
+                    Text(verbatim: content.title)
+                        .font(.headline)
                 }
+                Text(verbatim: content.subtitle)
+                    .font(.subheadline)
                 Text(verbatim: content.primaryContent)
-                Text(content.updatedAt)
-                    .font(.footnote)
-                    .fontWeight(.light)
-                    .foregroundColor(.gray)
+                if let timestamp = content.updatedAt {
+                    Text(timestamp)
+                        .font(.caption2)
+                        .fontWeight(.light)
+                        .foregroundColor(.gray)
+                        .padding(.top, 2)
+                }
             }
         }
     }
@@ -70,22 +62,24 @@ struct WidgetContentView: View {
             HStack {
                 VStack(alignment: .leading) {
                     HStack {
-                        ToolListImage(imageName: content.imageName)
-                        HStack {
-                            Text(verbatim: content.title)
-                                .font(.title2)
-                            Text(verbatim: content.subtitle)
-                                .font(.title3)
+                        if let name = content.imageName {
+                            ToolListImage(imageName: name)
                         }
+                        Text(verbatim: content.title)
+                            .font(.title)
                     }
+                    Text(verbatim: content.subtitle)
                     Text(verbatim: content.primaryContent)
                     if let text = content.secondaryContent {
                         Text(verbatim: text)
                     }
-                    Text(content.updatedAt)
-                        .font(.footnote)
-                        .fontWeight(.light)
-                        .foregroundColor(.gray)
+                    if let timestamp = content.updatedAt {
+                        Text(timestamp)
+                            .font(.footnote)
+                            .fontWeight(.light)
+                            .foregroundColor(.gray)
+                            .padding(.top, 8)
+                    }
                 }
                 Spacer()
                 if let value = content.count {
@@ -100,7 +94,7 @@ struct WidgetContentView: View {
 
         var body: some View {
                 Text(verbatim: value)
-                    .font(.largeTitle)
+                    .font(.title)
                     .foregroundColor(.white)
                     .padding()
                     .background(Circle().fill(Color.orange))
@@ -110,13 +104,12 @@ struct WidgetContentView: View {
     var body: some View {
         ZStack {
             ContainerRelativeShape()
-               .inset(by: 4)
                 .fill(Color.white)
             switch size {
             case .systemSmall:
-                SmallView(content: content).padding()
+                SmallView(content: content).padding(2)
             default:
-                MediumView(content: content).padding()
+                MediumView(content: content).padding(8)
             }
         }
     }
@@ -124,11 +117,13 @@ struct WidgetContentView: View {
 
 struct WidgetContentView_Previews: PreviewProvider {
     static var previews: some View {
-        WidgetContentView(content: .mock)
-            .preferredColorScheme(.dark)
+        WidgetContentView(content: .placeholder)
             .previewContext(WidgetPreviewContext(family: .systemMedium))
-        WidgetContentView(content: .mock)
-            .preferredColorScheme(.light)
+        WidgetContentView(content: .placeholder)
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        WidgetContentView(content: .emptyState)
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        WidgetContentView(content: .emptyState)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

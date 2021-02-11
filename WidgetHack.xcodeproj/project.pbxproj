@@ -23,12 +23,12 @@
 		839A965625D5A6A4004DD12D /* OpenItemWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 839A965525D5A69F004DD12D /* OpenItemWidget.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		839A965F25D5A737004DD12D /* OpenItemsIntentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A965E25D5A737004DD12D /* OpenItemsIntentProvider.swift */; };
 		839A966625D5AAFA004DD12D /* OpenItemWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 839A965525D5A69F004DD12D /* OpenItemWidget.intentdefinition */; };
+		C9303AD125D5CB5C00E03230 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9303AD025D5CB5C00E03230 /* Utils.swift */; };
 		C94A9F7625D5054F00D6C4FB /* WidgetContentReaderWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A9F7525D5054F00D6C4FB /* WidgetContentReaderWriter.swift */; };
 		C97EED7B25D503AB009AE98E /* WidgetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97EED7A25D503AB009AE98E /* WidgetDataModel.swift */; };
 		C987A03825D5887A0029BB09 /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987A03725D5887A0029BB09 /* WidgetEntry.swift */; };
 		C987A04425D58E7B0029BB09 /* WidgetContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987A04325D58E7B0029BB09 /* WidgetContentView.swift */; };
 		C9C8A2F325D5B8CD004CEC90 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = C950BD9A25D5AD5E00B11E3C /* Localized.strings */; };
-		C9F345F925D586CA0020A9B0 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F345ED25D586690020A9B0 /* Mocks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +74,7 @@
 		839A964F25D59BA5004DD12D /* WidgetContentNotificationPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentNotificationPoster.swift; sourceTree = "<group>"; };
 		839A965525D5A69F004DD12D /* OpenItemWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = OpenItemWidget.intentdefinition; sourceTree = "<group>"; };
 		839A965E25D5A737004DD12D /* OpenItemsIntentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenItemsIntentProvider.swift; sourceTree = "<group>"; };
+		C9303AD025D5CB5C00E03230 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C94A9F7525D5054F00D6C4FB /* WidgetContentReaderWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentReaderWriter.swift; sourceTree = "<group>"; };
 		C950BD9925D5AD5E00B11E3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		C97EED6625D4FF9C009AE98E /* WidgetHack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetHack.entitlements; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		C97EED7A25D503AB009AE98E /* WidgetDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetDataModel.swift; sourceTree = "<group>"; };
 		C987A03725D5887A0029BB09 /* WidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntry.swift; sourceTree = "<group>"; };
 		C987A04325D58E7B0029BB09 /* WidgetContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentView.swift; sourceTree = "<group>"; };
-		C9F345ED25D586690020A9B0 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +131,11 @@
 				839A962225D49165004DD12D /* WidgetsApp.swift */,
 				839A961125D49111004DD12D /* WidgetHackApp.swift */,
 				839A961325D49111004DD12D /* ContentView.swift */,
+				839A964F25D59BA5004DD12D /* WidgetContentNotificationPoster.swift */,
 				839A961525D49113004DD12D /* Assets.xcassets */,
 				C97EED6625D4FF9C009AE98E /* WidgetHack.entitlements */,
 				839A961A25D49113004DD12D /* Info.plist */,
 				839A961725D49113004DD12D /* Preview Content */,
-				839A964F25D59BA5004DD12D /* WidgetContentNotificationPoster.swift */,
 			);
 			path = WidgetHack;
 			sourceTree = "<group>";
@@ -160,6 +160,7 @@
 		839A963025D4946F004DD12D /* OpenItemWidget */ = {
 			isa = PBXGroup;
 			children = (
+				C9303AD025D5CB5C00E03230 /* Utils.swift */,
 				C987A02A25D587370029BB09 /* Widget */,
 				C9F345EC25D5865C0020A9B0 /* View */,
 				C94A9F7A25D5056B00D6C4FB /* SharedCode */,
@@ -202,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				839A963325D49470004DD12D /* Assets.xcassets */,
-				C9F345ED25D586690020A9B0 /* Mocks.swift */,
 				C987A04325D58E7B0029BB09 /* WidgetContentView.swift */,
 			);
 			path = View;
@@ -325,11 +325,11 @@
 			files = (
 				C97EED7B25D503AB009AE98E /* WidgetDataModel.swift in Sources */,
 				839A964425D49714004DD12D /* WidgetContentReaderWriter.swift in Sources */,
+				C9303AD125D5CB5C00E03230 /* Utils.swift in Sources */,
 				839A963225D4946F004DD12D /* OpenItemWidgets.swift in Sources */,
 				839A965F25D5A737004DD12D /* OpenItemsIntentProvider.swift in Sources */,
 				C987A04425D58E7B0029BB09 /* WidgetContentView.swift in Sources */,
 				839A965625D5A6A4004DD12D /* OpenItemWidget.intentdefinition in Sources */,
-				C9F345F925D586CA0020A9B0 /* Mocks.swift in Sources */,
 				C987A03825D5887A0029BB09 /* WidgetEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
