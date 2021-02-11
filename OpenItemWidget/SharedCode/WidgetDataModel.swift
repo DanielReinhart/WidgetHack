@@ -41,12 +41,4 @@ struct WidgetContent: Codable, Hashable {
     let secondaryContent: String? // for medium size
     let count: String? // for example: number of open items
     let updatedAt: String // relative formatted date of last update
-
-    // TODO: I think you get this for free since all ivars are also Hashable
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(title)
-        hasher.combine(subtitle)
-        hasher.combine(imageName)
-        hasher.combine(value)
-    }
 }

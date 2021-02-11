@@ -36,13 +36,9 @@ struct WidgetToolSnapshot: Codable, Hashable {
 struct WidgetContent: Codable, Hashable {
     let title: String
     let subtitle: String
-    let imageName: String
-    let value: String
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(title)
-        hasher.combine(subtitle)
-        hasher.combine(imageName)
-        hasher.combine(value)
-    }
+    let imageName: String // tool icon name
+    let primaryContent: String // for both small and medium size
+    let secondaryContent: String? // for medium size
+    let count: String? // for example: number of open items
+    let updatedAt: String // relative formatted date of last update
 }

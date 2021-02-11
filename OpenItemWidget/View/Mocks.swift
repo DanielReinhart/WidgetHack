@@ -14,6 +14,7 @@ extension WidgetContent {
             imageName: "Punchlist",
             primaryContent: "primary content",
             secondaryContent: "secondary content",
+            count: "9",
             updatedAt: "updated: yesterday")
     }
 }
