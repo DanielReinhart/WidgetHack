@@ -3,10 +3,11 @@ import SwiftUI
 
 @main
 struct OpenItemWidget: Widget {
-    let kind = WidgetKind.openItems.rawValue
+    static let widgetKind = WidgetKind.openItems
+    let kind = Self.widgetKind.rawValue
 
-    private var provider: OpenItemsProvider {
-        OpenItemsProvider()
+    private var provider: WidgetContentProvider {
+        WidgetContentProvider(kind: Self.widgetKind)
     }
 
     var body: some WidgetConfiguration {
@@ -15,7 +16,7 @@ struct OpenItemWidget: Widget {
             provider: provider,
             content: { WidgetContentView(content: $0.content) })
             .supportedFamilies([.systemSmall, .systemMedium])
-            .configurationDisplayName("My Widget")
+            .configurationDisplayName("Open Items")
             .description("This is an example widget.")
     }
 }

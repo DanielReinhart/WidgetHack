@@ -1,7 +1,9 @@
 import WidgetKit
 
-struct OpenItemsProvider: TimelineProvider {
+struct WidgetContentProvider: TimelineProvider {
     typealias Entry = WidgetEntry
+
+    let kind: WidgetKind
 
     func placeholder(in context: Context) -> WidgetEntry {
         WidgetEntry.mock
@@ -12,8 +14,8 @@ struct OpenItemsProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [WidgetEntry] = []
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+//        var entries: [WidgetEntry] = []
+//        let timeline = Timeline(entries: entries, policy: .atEnd)
+//        completion(timeline)
     }
 }
