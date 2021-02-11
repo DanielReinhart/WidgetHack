@@ -4,7 +4,6 @@ import Foundation
 final class WidgetContentReaderWriter {
     static let snapshotKey = "widget-snasphot"
 
-    // TODO: use app group defaults
     var sharedContainer: UserDefaults? {
         UserDefaults(suiteName: WidgetsAppGroup.name.rawValue)
     }
@@ -21,9 +20,26 @@ final class WidgetContentReaderWriter {
     }
 
     func readContent(kind: WidgetKind, toolName: String) -> WidgetContent? {
-//        guard let snapshot = readSnapshot()
-//        else { return nil }
-        return nil
+        guard let snapshot = readSnapshot()
+        else { return nil }
+        return snapshot.contentBy(kind: kind, tool: toolName)
+    }
+
+    func writeSnapshot(kind: WidgetKind, tool: String, widgetContent: WidgetContent) throws {
+        //Get data out from store
+        guard var storeData = readSnapshot()?.data else {
+            throw NSError(domain: "widgets", code: 1, userInfo: nil)
+        }
+
+        //Insert New Data into Store
+        let newToolSnapshot = WidgetToolSnapshot(toolName: tool, content: widgetContent)
+        storeData[kind.rawValue]?.insert(newToolSnapshot)
+
+        //Generate New Store
+        let updatedStore = WidgetStoreSnapshot(data: storeData, lastUpdated: Date(), versionNumber: "1")
+
+        //Write New store to user defaults
+        sharedContainer?.setValue(updatedStore, forKey: Self.snapshotKey)
     }
 
 

@@ -8,7 +8,7 @@ enum WidgetKind: String {
 
 struct WidgetStoreSnapshot: Codable {
     ///"Open Items" : { "Punch": WidgetContent, "Correspondence": WidgetContent }
-    let data: [String: [WidgetToolSnapshot]]
+    let data: [String: Set<WidgetToolSnapshot>]
     let lastUpdated: Date
     let versionNumber: String
 }
@@ -23,14 +23,26 @@ extension WidgetStoreSnapshot {
     }
 }
 
-struct WidgetToolSnapshot: Codable {
+struct WidgetToolSnapshot: Codable, Hashable {
     let toolName: String
     let content: WidgetContent
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(toolName)
+        hasher.combine(content)
+    }
 }
 
-struct WidgetContent: Codable {
+struct WidgetContent: Codable, Hashable {
     let title: String
     let subtitle: String
     let imageName: String
     let value: String
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
+        hasher.combine(subtitle)
+        hasher.combine(imageName)
+        hasher.combine(value)
+    }
 }
