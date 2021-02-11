@@ -12,6 +12,9 @@ class WidgetCoordinator {
     }
 }
 
+//"Open Items" : { "Punch": WidgetContent, "Correspondence": WidgetContent }
+
+@available(iOS 14.0, *)
 struct WidgetsStore {
     private var registeredWidgetKinds: [WidgetKind] = []
     private var contentByKind: [WidgetKind: [String: WidgetContent]] = [:]
@@ -45,7 +48,19 @@ final class WidgetContentNotificationObserver {
     }
 
     @objc func handleNotification(notification: Notification) {
+        guard let data = notification.userInfo?[WidgetContentNotificationData.userInfoKey] as? WidgetContentNotificationData else {
+            return
+        }
 
+        do {
+            try WidgetContentReaderWriter().writeSnapshot(kind: data.kind,
+                                                          tool: data.tool,
+                                                          widgetContent: data.content)
+            WidgetCenter.shared.reloadTimelines(ofKind: data.kind.rawValue)
+        } catch {
+            //Assertion???
+            print("error")
+        }
     }
 }
 

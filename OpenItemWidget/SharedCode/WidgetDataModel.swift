@@ -6,37 +6,34 @@ enum WidgetKind: String {
     case openItems
 }
 
-enum WidgetsAppGroup: String {
-    case name = "group.com.useyourloaf.widgets"
-}
-
-//"Open Items" : { "Punch": WidgetContent, "Correspondence": WidgetContent }
-struct WidgetStoreSnapshot {
-    let data: [WidgetKind: [WidgetToolSnapshot]]
+struct WidgetStoreSnapshot: Codable {
+    ///"Open Items" : { "Punch": WidgetContent, "Correspondence": WidgetContent }
+    let data: [String: Set<WidgetToolSnapshot>]
     let lastUpdated: Date
     let versionNumber: String
 }
 
+enum WidgetsAppGroup: String {
+    case name = "group.com.useyourloaf.widgets"
+}
+
 extension WidgetStoreSnapshot {
     func contentBy(kind: WidgetKind, tool: String) -> WidgetContent? {
-        data[kind]?.first(where: { $0.toolName == tool })?.content
+        data[kind.rawValue]?.first(where: { $0.toolName == tool })?.content
     }
 }
 
-extension WidgetStoreSnapshot: Decodable {
-    init(from decoder: Decoder) throws {
-        self.data = [:]
-        self.lastUpdated = Date()
-        self.versionNumber = "0"
-    }
-}
-
-struct WidgetToolSnapshot: Codable {
+struct WidgetToolSnapshot: Codable, Hashable {
     let toolName: String
     let content: WidgetContent
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(toolName)
+        hasher.combine(content)
+    }
 }
 
-struct WidgetContent: Codable {
+struct WidgetContent: Codable, Hashable {
     let title: String
     let subtitle: String
     let imageName: String // tool icon name
@@ -44,4 +41,12 @@ struct WidgetContent: Codable {
     let secondaryContent: String? // for medium size
     let count: String? // for example: number of open items
     let updatedAt: String // relative formatted date of last update
+
+    // TODO: I think you get this for free since all ivars are also Hashable
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(title)
+        hasher.combine(subtitle)
+        hasher.combine(imageName)
+        hasher.combine(value)
+    }
 }
