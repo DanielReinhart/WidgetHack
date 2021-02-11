@@ -21,7 +21,7 @@ struct WidgetContentView: View {
         var imagePadding: CGFloat {
             switch size {
             case .systemSmall:
-                return 2
+                return 5
             default:
                 return 4
             }
@@ -88,7 +88,22 @@ struct WidgetContentView: View {
                         .foregroundColor(.gray)
                 }
                 Spacer()
+                if let value = content.count {
+                    CountView(value: value)
+                }
             }
+        }
+    }
+
+    private struct CountView: View {
+        let value: String
+
+        var body: some View {
+                Text(verbatim: value)
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Circle().fill(Color.orange))
         }
     }
 
