@@ -39,6 +39,9 @@ struct WidgetToolSnapshot: Codable {
 struct WidgetContent: Codable {
     let title: String
     let subtitle: String
-    let imageName: String
-    let value: String
+    let imageName: String // tool icon name
+    let primaryContent: String // for both small and medium size
+    let secondaryContent: String? // for medium size
+    let count: String? // for example: number of open items
+    let updatedAt: String // relative formatted date of last update
 }
