@@ -6,7 +6,7 @@ struct WidgetContentProvider: TimelineProvider {
     let kind: WidgetKind
 
     func placeholder(in context: Context) -> WidgetEntry {
-        WidgetEntry.placeholder
+        WidgetEntry.mock
     }
 
     func getSnapshot(in context: Context, completion: @escaping (WidgetEntry) -> ()) {
@@ -14,8 +14,9 @@ struct WidgetContentProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-//        var entries: [WidgetEntry] = []
-//        let timeline = Timeline(entries: entries, policy: .atEnd)
-//        completion(timeline)
+        let entry = WidgetEntry(date: Date(), content: .mock)
+        var entries: [WidgetEntry] = [entry]
+        let timeline = Timeline(entries: entries, policy: .atEnd)
+        completion(timeline)
     }
 }

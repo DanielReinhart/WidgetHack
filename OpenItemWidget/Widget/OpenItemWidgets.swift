@@ -11,16 +11,15 @@ struct OpenItemWidget: Widget {
     }
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(
-            kind: kind,
-            provider: provider,
-            content: { WidgetContentView(content: $0.content) })
+        IntentConfiguration(kind: kind,
+                            intent: OpenItemsIntent.self,
+                            provider: provider,
+                            content: { WidgetContentView(content: $0.content) })
             .supportedFamilies([.systemSmall, .systemMedium])
             .configurationDisplayName(Self.widgetKind.displayName)
 
     }
 }
-
 
 extension WidgetKind {
     var displayName: String {
