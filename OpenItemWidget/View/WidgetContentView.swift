@@ -23,7 +23,7 @@ struct WidgetContentView: View {
             case .systemSmall:
                 return 5
             default:
-                return 4
+                return 6
             }
         }
 
@@ -111,22 +111,24 @@ struct WidgetContentView: View {
         ZStack {
             ContainerRelativeShape()
                .inset(by: 4)
-               .fill(Color.white)
+                .fill(Color.white)
             switch size {
             case .systemSmall:
                 SmallView(content: content).padding()
             default:
                 MediumView(content: content).padding()
             }
-        }.background(Color.black)
+        }
     }
 }
 
 struct WidgetContentView_Previews: PreviewProvider {
     static var previews: some View {
         WidgetContentView(content: .mock)
+            .preferredColorScheme(.dark)
             .previewContext(WidgetPreviewContext(family: .systemMedium))
         WidgetContentView(content: .mock)
+            .preferredColorScheme(.light)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

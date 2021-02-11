@@ -6,28 +6,33 @@ struct OpenItemWidget: Widget {
     static let widgetKind = WidgetKind.openItems
     let kind = Self.widgetKind.rawValue
 
-    private var provider: WidgetContentProvider {
-        WidgetContentProvider(kind: Self.widgetKind)
-    }
-
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind,
                             intent: OpenItemsIntent.self,
-                            provider: provider,
+                            provider: OpenItemsIntentProvider(),
                             content: { WidgetContentView(content: $0.content) })
             .supportedFamilies([.systemSmall, .systemMedium])
-            .configurationDisplayName(Self.widgetKind.displayName)
-
+// TODO: localized not working...
+//            .configurationDisplayName(Self.widgetKind.displayName)
+//            .description(Self.widgetKind.description)
+            .configurationDisplayName("My Open Items")
+            .description("Glance at your open Items from the current project")
+        
     }
 }
 
 extension WidgetKind {
-    var displayName: String {
+    var displayName: LocalizedStringKey {
         switch self {
         case .openItems:
-            return NSLocalizedString(
-                "My Open Items",
-                comment: "My Open Items widget display name")
+            return "my_open_items_widget_display_name"
+        }
+    }
+
+    var description: LocalizedStringKey {
+        switch self {
+        case .openItems:
+            return "my_open_items_widget_description"
         }
     }
 }

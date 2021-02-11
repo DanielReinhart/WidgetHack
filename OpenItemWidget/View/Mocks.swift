@@ -11,10 +11,10 @@ extension WidgetContent {
         Self(
             title: "Title",
             subtitle: "subtitle",
-            imageName: "Punchlist",
+            imageName: "RFI",
             primaryContent: "primary content",
             secondaryContent: "secondary content",
-            count: "9",
+            count: "4",
             updatedAt: "updated: yesterday")
     }
 }

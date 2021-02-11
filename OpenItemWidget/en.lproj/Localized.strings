@@ -1,2 +1,3 @@
 /* My Open Items widget display name */
-"My Open Items" = "My Open Items";
+"my_open_items_widget_display_name" = "My Open Items";
+"my_open_items_widget_description" = "Glance at your Open Items from the current project";
