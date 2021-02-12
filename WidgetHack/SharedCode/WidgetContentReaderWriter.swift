@@ -1,8 +1,16 @@
 import Foundation
 
 // COPY: WidgetHack.WidgetContentReaderWriter.swift
+
+enum WidgetsAppGroup: String {
+    case name = "group.com.procore.widgets"
+}
+
+// TODO: add unit tests
+// TODO: add checks for current version when reading
 final class WidgetContentReaderWriter {
-    static let snapshotKey = "widget-snasphot"
+    static let snapshotKey = "widget-snapshot"
+    static let currentVersion: String = "1"
 
     var sharedContainer: UserDefaults? {
         UserDefaults(suiteName: WidgetsAppGroup.name.rawValue)
@@ -27,19 +35,24 @@ final class WidgetContentReaderWriter {
 
     func writeSnapshot(kind: WidgetKind, tool: WidgetTool, widgetContent: WidgetContent) throws {
         //Get data out from store
-        guard var storeData = readSnapshot()?.data else {
-            throw NSError(domain: "widgets", code: 1, userInfo: nil)
-        }
+        // Do we have data?
+        var storeData = readSnapshot()?.data ?? [kind: []]
 
         //Insert New Data into Store
         let newToolSnapshot = WidgetToolSnapshot(tool: tool, content: widgetContent)
-        storeData[kind.rawValue]?.insert(newToolSnapshot)
+        storeData[kind]?.insert(newToolSnapshot)
 
         //Generate New Store
-        let updatedStore = WidgetStoreSnapshot(data: storeData, lastUpdated: Date(), versionNumber: "1")
+        let updatedStore = WidgetStoreSnapshot(
+            data: storeData,
+            lastUpdated: Date(),
+            versionNumber: Self.currentVersion)
+
+        let encoder = JSONEncoder()
+        let encodedData = try encoder.encode(updatedStore)
 
         //Write New store to user defaults
-        sharedContainer?.setValue(updatedStore, forKey: Self.snapshotKey)
+        sharedContainer?.setValue(encodedData, forKey: Self.snapshotKey)
     }
 
 

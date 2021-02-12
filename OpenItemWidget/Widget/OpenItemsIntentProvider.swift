@@ -42,7 +42,7 @@ private extension OpenItemsIntentProvider {
         } else if let content = readContent(configuration: configuration) {
             return content
         } else {
-            return .emptyState
+            return .makeEmptyState(tool: configuration.tool.widgetTool)
         }
     }
 

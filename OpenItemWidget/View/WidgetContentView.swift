@@ -121,9 +121,9 @@ struct WidgetContentView_Previews: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .systemMedium))
         WidgetContentView(content: .placeholder)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
-        WidgetContentView(content: .emptyState)
+        WidgetContentView(content: .makeEmptyState(tool: .punch))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
-        WidgetContentView(content: .emptyState)
+        WidgetContentView(content: .makeEmptyState(tool: .punch))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		839A961225D49111004DD12D /* WidgetHackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A961125D49111004DD12D /* WidgetHackApp.swift */; };
 		839A961425D49111004DD12D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A961325D49111004DD12D /* ContentView.swift */; };
-		839A961625D49113004DD12D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839A961525D49113004DD12D /* Assets.xcassets */; };
 		839A961925D49113004DD12D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839A961825D49113004DD12D /* Preview Assets.xcassets */; };
 		839A962325D49165004DD12D /* WidgetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A962125D49164004DD12D /* WidgetDataModel.swift */; };
-		839A962425D49165004DD12D /* WidgetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A962225D49165004DD12D /* WidgetsApp.swift */; };
+		839A962425D49165004DD12D /* WidgetsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A962225D49165004DD12D /* WidgetsCoordinator.swift */; };
 		839A962D25D4946F004DD12D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839A962C25D4946F004DD12D /* WidgetKit.framework */; };
 		839A962F25D4946F004DD12D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 839A962E25D4946F004DD12D /* SwiftUI.framework */; };
 		839A963225D4946F004DD12D /* OpenItemWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A963125D4946F004DD12D /* OpenItemWidgets.swift */; };
@@ -23,8 +22,11 @@
 		839A965625D5A6A4004DD12D /* OpenItemWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 839A965525D5A69F004DD12D /* OpenItemWidget.intentdefinition */; settings = {ATTRIBUTES = (codegen, ); }; };
 		839A965F25D5A737004DD12D /* OpenItemsIntentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A965E25D5A737004DD12D /* OpenItemsIntentProvider.swift */; };
 		839A966625D5AAFA004DD12D /* OpenItemWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 839A965525D5A69F004DD12D /* OpenItemWidget.intentdefinition */; };
-		C9303AD125D5CB5C00E03230 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9303AD025D5CB5C00E03230 /* Utils.swift */; };
+		C9303AD125D5CB5C00E03230 /* Tool+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9303AD025D5CB5C00E03230 /* Tool+extensions.swift */; };
 		C94A9F7625D5054F00D6C4FB /* WidgetContentReaderWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94A9F7525D5054F00D6C4FB /* WidgetContentReaderWriter.swift */; };
+		C96E328125D5F11300AFF2EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839A961525D49113004DD12D /* Assets.xcassets */; };
+		C96E328D25D600D200AFF2EC /* WidgetNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E328C25D600D200AFF2EC /* WidgetNotifications.swift */; };
+		C96E329325D6017E00AFF2EC /* WidgetsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E329225D6017E00AFF2EC /* WidgetsStore.swift */; };
 		C97EED7B25D503AB009AE98E /* WidgetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97EED7A25D503AB009AE98E /* WidgetDataModel.swift */; };
 		C987A03825D5887A0029BB09 /* WidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987A03725D5887A0029BB09 /* WidgetEntry.swift */; };
 		C987A04425D58E7B0029BB09 /* WidgetContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987A04325D58E7B0029BB09 /* WidgetContentView.swift */; };
@@ -63,7 +65,7 @@
 		839A961825D49113004DD12D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		839A961A25D49113004DD12D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		839A962125D49164004DD12D /* WidgetDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetDataModel.swift; sourceTree = "<group>"; };
-		839A962225D49165004DD12D /* WidgetsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetsApp.swift; sourceTree = "<group>"; };
+		839A962225D49165004DD12D /* WidgetsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetsCoordinator.swift; sourceTree = "<group>"; };
 		839A962A25D4946F004DD12D /* OpenItemWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OpenItemWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		839A962C25D4946F004DD12D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		839A962E25D4946F004DD12D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -74,9 +76,11 @@
 		839A964F25D59BA5004DD12D /* WidgetContentNotificationPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentNotificationPoster.swift; sourceTree = "<group>"; };
 		839A965525D5A69F004DD12D /* OpenItemWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = OpenItemWidget.intentdefinition; sourceTree = "<group>"; };
 		839A965E25D5A737004DD12D /* OpenItemsIntentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenItemsIntentProvider.swift; sourceTree = "<group>"; };
-		C9303AD025D5CB5C00E03230 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C9303AD025D5CB5C00E03230 /* Tool+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tool+extensions.swift"; sourceTree = "<group>"; };
 		C94A9F7525D5054F00D6C4FB /* WidgetContentReaderWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetContentReaderWriter.swift; sourceTree = "<group>"; };
 		C950BD9925D5AD5E00B11E3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
+		C96E328C25D600D200AFF2EC /* WidgetNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetNotifications.swift; sourceTree = "<group>"; };
+		C96E329225D6017E00AFF2EC /* WidgetsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsStore.swift; sourceTree = "<group>"; };
 		C97EED6625D4FF9C009AE98E /* WidgetHack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetHack.entitlements; sourceTree = "<group>"; };
 		C97EED6F25D502C4009AE98E /* OpenItemWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenItemWidgetExtension.entitlements; sourceTree = "<group>"; };
 		C97EED7A25D503AB009AE98E /* WidgetDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetDataModel.swift; sourceTree = "<group>"; };
@@ -128,7 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				C94A9F7925D5055C00D6C4FB /* SharedCode */,
-				839A962225D49165004DD12D /* WidgetsApp.swift */,
+				839A962225D49165004DD12D /* WidgetsCoordinator.swift */,
+				C96E329225D6017E00AFF2EC /* WidgetsStore.swift */,
+				C96E328C25D600D200AFF2EC /* WidgetNotifications.swift */,
 				839A961125D49111004DD12D /* WidgetHackApp.swift */,
 				839A961325D49111004DD12D /* ContentView.swift */,
 				839A964F25D59BA5004DD12D /* WidgetContentNotificationPoster.swift */,
@@ -160,7 +166,7 @@
 		839A963025D4946F004DD12D /* OpenItemWidget */ = {
 			isa = PBXGroup;
 			children = (
-				C9303AD025D5CB5C00E03230 /* Utils.swift */,
+				C9303AD025D5CB5C00E03230 /* Tool+extensions.swift */,
 				C987A02A25D587370029BB09 /* Widget */,
 				C9F345EC25D5865C0020A9B0 /* View */,
 				C94A9F7A25D5056B00D6C4FB /* SharedCode */,
@@ -288,8 +294,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96E328125D5F11300AFF2EC /* Assets.xcassets in Resources */,
 				839A961925D49113004DD12D /* Preview Assets.xcassets in Resources */,
-				839A961625D49113004DD12D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,9 +317,11 @@
 			files = (
 				839A962325D49165004DD12D /* WidgetDataModel.swift in Sources */,
 				839A961425D49111004DD12D /* ContentView.swift in Sources */,
+				C96E328D25D600D200AFF2EC /* WidgetNotifications.swift in Sources */,
 				839A961225D49111004DD12D /* WidgetHackApp.swift in Sources */,
 				839A965025D59BA5004DD12D /* WidgetContentNotificationPoster.swift in Sources */,
-				839A962425D49165004DD12D /* WidgetsApp.swift in Sources */,
+				C96E329325D6017E00AFF2EC /* WidgetsStore.swift in Sources */,
+				839A962425D49165004DD12D /* WidgetsCoordinator.swift in Sources */,
 				C94A9F7625D5054F00D6C4FB /* WidgetContentReaderWriter.swift in Sources */,
 				839A966625D5AAFA004DD12D /* OpenItemWidget.intentdefinition in Sources */,
 			);
@@ -325,7 +333,7 @@
 			files = (
 				C97EED7B25D503AB009AE98E /* WidgetDataModel.swift in Sources */,
 				839A964425D49714004DD12D /* WidgetContentReaderWriter.swift in Sources */,
-				C9303AD125D5CB5C00E03230 /* Utils.swift in Sources */,
+				C9303AD125D5CB5C00E03230 /* Tool+extensions.swift in Sources */,
 				839A963225D4946F004DD12D /* OpenItemWidgets.swift in Sources */,
 				839A965F25D5A737004DD12D /* OpenItemsIntentProvider.swift in Sources */,
 				C987A04425D58E7B0029BB09 /* WidgetContentView.swift in Sources */,
@@ -481,7 +489,7 @@
 				CODE_SIGN_ENTITLEMENTS = WidgetHack/WidgetHack.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"WidgetHack/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "WidgetHack/Preview\\ Content";
 				DEVELOPMENT_TEAM = Q69JMRS3FN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WidgetHack/Info.plist;
@@ -507,7 +515,7 @@
 				CODE_SIGN_ENTITLEMENTS = WidgetHack/WidgetHack.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"WidgetHack/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "WidgetHack/Preview\\ Content";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WidgetHack/Info.plist;

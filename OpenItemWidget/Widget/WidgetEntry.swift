@@ -17,10 +17,10 @@ extension WidgetContent {
             updatedAt: "last updated 10min ago")
     }
 
-    static var emptyState: Self {
+    static func makeEmptyState(tool: WidgetTool?) -> Self {
         Self(
             title: "No Data",
-            subtitle: "",
+            subtitle: tool?.displayName ?? "--",
             imageName: nil,
             primaryContent: "tap to open procore app",
             secondaryContent: nil,
