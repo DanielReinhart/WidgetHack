@@ -34,6 +34,7 @@ final class WidgetsStore {
 private extension WidgetStoreSnapshot {
     func with(kind: WidgetKind, tool: WidgetTool, content: WidgetContent) -> Self {
         var snapshots = data[kind] ?? []
+
         if let toolSnapshot = snapshots.first(where: { $0.tool == tool }) {
             snapshots.remove(toolSnapshot)
             snapshots.insert(WidgetToolSnapshot(tool: tool, content: content))

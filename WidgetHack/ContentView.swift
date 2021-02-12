@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import Intents
+import IntentsUI
 
 struct ContentView: View {
     let coordinator = WidgetCoordinator.shared
     var tools: [WidgetTool] = [.punch, .coordinationIssues, .rfi]
     let projectName = "My Test Project"
+    @State var presentSiriController: Bool = false
     @State var numberOfPunchItems: String = "0"
     @State var numberOfRFIItems: String = "0"
     @State var numberOfCoordinationIssues: String = "0"
@@ -58,6 +61,12 @@ struct ContentView: View {
                     }
                 }
             }
+            Button("ADD TO SIRI") {
+                presentSiriController.toggle()
+            }.sheet(isPresented: $presentSiriController, content: {
+                SiriView()
+            })
+
         }.padding()
     }
 
@@ -89,6 +98,27 @@ struct ContentView: View {
         case .rfi:
             return numberOfRFIItems
         }
+    }
+}
+
+struct SiriView: UIViewControllerRepresentable {
+    func updateUIViewController(_ uiViewController: INUIAddVoiceShortcutViewController, context: Context) {
+        //NOOP
+    }
+
+    typealias UIViewControllerType = INUIAddVoiceShortcutViewController
+
+    func makeUIViewController(context: Context) -> INUIAddVoiceShortcutViewController {
+        createNewShortcutViewController()
+    }
+
+
+    func createNewShortcutViewController() -> INUIAddVoiceShortcutViewController {
+        let intent = OpenItemsIntent()
+        intent.tool = .punch
+        intent.suggestedInvocationPhrase = "View Open Items"
+        let shortcut = INShortcut(intent: intent)
+        return INUIAddVoiceShortcutViewController(shortcut: shortcut!)
     }
 }
 

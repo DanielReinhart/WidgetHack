@@ -55,5 +55,10 @@ final class WidgetContentReaderWriter {
         sharedContainer?.setValue(encodedData, forKey: Self.snapshotKey)
     }
 
+    //Might need this if the user switches projects - otherwise our data store will need to get more complicated and group by project
+    func clearAllContent() {
+        
+    }
+
 
 }
