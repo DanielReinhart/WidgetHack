@@ -14,7 +14,7 @@ extension WidgetContent {
             primaryContent: "10 open items",
             secondaryContent: "141 items in project",
             count: "10",
-            updatedAt: "last updated 10min ago")
+            updatedAt: "last updated: 1/10/2021 8:00am")
     }
 
     static func makeEmptyState(tool: WidgetTool?) -> Self {

@@ -67,10 +67,10 @@ struct ContentView: View {
             title: projectName,
             subtitle: tool.displayName,
             imageName: tool.imageName,
-            primaryContent: "\(numberOfItems(tool: tool)) items",
+            primaryContent: "\(numberOfItems(tool: tool)) open items",
             secondaryContent: "14 items in the project",
             count: numberOfItems(tool: tool),
-            updatedAt: "last updated: now")
+            updatedAt: "last updated: 01/18/2021 8:00am")
     }
 
     func postNotification(tool: WidgetTool) {
